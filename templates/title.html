@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+    
+{% block body %}
+    <h2>Search by Book Title</h2>
+    
+    <hr>
+    
+    <form action="/title" method="post">
+        <div class="form-group">
+            <input class="form-control" name="title" placeholder="Book Title" required type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search Title</button>
+    </form>
+{% endblock %}

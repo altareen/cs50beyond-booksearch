@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+    
+{% block body %}
+    <h2>Search by Book Author</h2>
+    
+    <hr>
+
+    <form action="/author" method="post">
+        <div class="form-group">
+            <input class="form-control" name="author" placeholder="Book Author" required type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search Author</button>
+    </form>
+{% endblock %}

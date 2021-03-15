@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h2>Retrieved {{ quantity }} results.</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Year</th>
+            <th scope="col">ISBN</th>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row["title"] }}</td>
+                <td>{{ row["name"] }}</td>
+                <td>{{ row["year"] }}</td>
+                <td>{{ row["isbn"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- <a href="/">Return to Home</a> -->
+    <form action="/" method="get">
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Return to Search</button>
+        </div>
+    </form>
+{% endblock %}
