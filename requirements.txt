@@ -1,7 +1,6 @@
-flask
-flask-session
+Flask
+Flask-Session
 requests
 sqlalchemy
-psycopg2
 psycopg2-binary
 gunicorn
