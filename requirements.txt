@@ -1,4 +1,5 @@
 flask
+flask-session
 requests
 sqlalchemy
 psycopg2
