@@ -26,6 +26,7 @@ from flask import Flask, flash, redirect, render_template, request, session, url
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 
 # Configure application
 app = Flask(__name__)
