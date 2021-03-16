@@ -24,10 +24,15 @@ import os
 
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 
-app = Flask(__name__)
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+
+# Configure application
+app = Flask(__name__)
+
+# Ensure templates are auto-reloaded
+app.config["TEMPLATES_AUTO_RELOAD"] = True
+
 
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
