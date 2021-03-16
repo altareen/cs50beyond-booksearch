@@ -96,3 +96,9 @@ def author():
     else:
         return render_template("author.html")
 
+
+# Listen for errors
+for code in default_exceptions:
+    app.errorhandler(code)(errorhandler)
+
+
