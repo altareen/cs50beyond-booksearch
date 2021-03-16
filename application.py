@@ -22,11 +22,9 @@
 
 import os
 
-from flask import Flask, flash, redirect, render_template, request, session, url_for
-from flask_session import Session
+from flask import Flask, render_template, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 
 # Configure application
 app = Flask(__name__)
@@ -41,11 +39,6 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
-
-# Configure session to use filesystem (instead of signed cookies)
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
 
 # Make sure the DATABASE_URL environment variable is set
 if not os.environ.get("DATABASE_URL"):
